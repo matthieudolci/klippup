@@ -154,7 +154,6 @@ func commit() error {
 		URL:  t.Repository,
 		Auth: auth,
 	})
-
 	if err != nil {
 		fmt.Printf("%v", err)
 		return err
@@ -174,7 +173,9 @@ func commit() error {
 		return err
 	}
 
-	_, err = w.Commit("Klipper config file updated!", &git.CommitOptions{})
+	_, err = w.Commit("Klipper config file updated!", &git.CommitOptions{
+		All: true
+	})
 	if err != nil {
 		log.WithError(err).Error("Could not commit")
 		return err
