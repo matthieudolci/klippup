@@ -89,7 +89,7 @@ func watch() error {
 
 	t := Conf{}
 
-	y, err := ioutil.ReadFile("config.yaml")
+	y, err := ioutil.ReadFile("config.yml")
 	if err != nil {
 		log.WithError(err).Error("Could not read config file")
 	}
@@ -134,7 +134,7 @@ func commit() error {
 
 	t := Conf{}
 
-	y, err := ioutil.ReadFile("config.yaml")
+	y, err := ioutil.ReadFile("config.yml")
 	if err != nil {
 		log.WithError(err).Error("Could not read config file")
 	}
