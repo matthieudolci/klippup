@@ -174,7 +174,7 @@ func commit() error {
 	}
 
 	_, err = w.Commit("Klipper config file updated!", &git.CommitOptions{
-		All: true
+		All: true,
 	})
 	if err != nil {
 		log.WithError(err).Error("Could not commit")
