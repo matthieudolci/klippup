@@ -150,7 +150,7 @@ func commit() error {
 		Password: t.Token,
 	}
 
-	r, err := git.Clone(memory.NewStorage(), memfs.New(), &git.CloneOptions{
+	r, err := git.Clone(storer, fs, &git.CloneOptions{
 		URL:  t.Repository,
 		Auth: auth,
 	})
